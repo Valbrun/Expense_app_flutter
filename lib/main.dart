@@ -31,7 +31,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Home'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
             width: double.infinity,
@@ -42,6 +43,31 @@ class MyHomePage extends StatelessWidget {
             ),
           ),
           // column
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'amount',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'amount',
+                    ),
+                  ),
+                  FlatButton(
+                    onPressed: null,
+                    child: Text('add me'),
+                    textColor: Colors.purple,
+                  )
+                ],
+              ),
+            ),
+          ),
           Column(
             children: transactions
                 .map((tx) => Card(
